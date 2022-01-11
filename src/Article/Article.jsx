@@ -1,6 +1,6 @@
 import './Article.css'
 
-function Article (props) {
+function Article(props) {
     return <>
         {
             props.images.map((image) =>
@@ -12,22 +12,30 @@ function Article (props) {
                         <span className="likes">{image.likes}</span>
                         <button className="like-button"
                             onClick={() => {
-                                const updatedImages = [...props.images];
-                                const imageFound = updatedImages.find(
-                                    (targetImage) => image.id === targetImage.id
-                                );
-                                imageFound.likes++;
-                                props.setImage(updatedImages);
-                                props.updateLikesOnServer(imageFound);
+                                props.updateLikesOnServer(image)
                             }}
                         >♥</button>
                     </div>
                     <ul className="comments">
-                        {image.comments.map((comment) => (
+                        {image?.comments?.map((comment) => (
                             <li key={comment.id}>{comment.content}</li>
                         ))}
                     </ul>
-                    <form className="comment-form">
+                    <form className="comment-form"
+                        onSubmit={(e) => {
+                            e.preventDefault()
+                            // @ts-ignore
+                            const content = e.target.comment.value
+                            // @ts-ignore
+                            e.target.reset()
+
+                            props.createCommentOnServer(content, image.id)
+
+
+                        }
+
+                        }
+                    >
                         <input
                             className="comment-input"
                             type="text"
@@ -42,4 +50,4 @@ function Article (props) {
         }
     </>
 }
-    export default Article
+export default Article

@@ -25,21 +25,50 @@ function App() {
         image: src,
         likes: 0
       })
-    }).then(function (resp) {
-      return resp.json();
-    });
+    }).then((response) => response.json())
+      .then((imagePosted) => {
+        const copyImage = [...images, imagePosted]
+        setImage(copyImage)
+      }
+      )
   }
 
-  function updateLikesOnServer(image) {
-    return fetch(`http://localhost:8000/images/${image.id}`, {
-      method: "PATCH",
+  function createCommentOnServer(content, ImageId) {
+
+
+    return fetch("http://localhost:8000/comments", {
+      method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        likes: image.likes
+        content: content,
+        ImageId: ImageId
       })
-    }).then((resp) => resp.json());
+    }).then((response) => response.json())
+      .then((commment) => {
+        const updatedImages = JSON.parse(JSON.stringify(images))
+        const match = updatedImages.find(target => target.id === ImageId)
+        match.comments.push(commment)
+        setImage(updatedImages)
+      })
+  }
+
+  function updateLikesOnServer(image) {
+    // update the server
+    fetch(`http://localhost:8000/images/${image.id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ likes: image.likes + 1 })
+    })
+
+    // update state
+    const updatedImages = JSON.parse(JSON.stringify(images))
+    const match = updatedImages.find(target => target.id === image.id)
+    match.likes++
+    setImage(updatedImages)
   }
 
   return (
@@ -51,12 +80,12 @@ function App() {
       <section className="image-container">
         {/* <!-- This is the form for challenge 1, uncomment only after you finished the main task --> */}
 
-        <Form />
+        <Form setImage={setImage} postImageOnServer={postImageOnServer} />
 
         {/* <!-- This is the Post card. Ust the following HTML as reference to build your cards using JS --> */}
 
-        <Article images={images} setImage={setImage} updateLikesOnServer={updateLikesOnServer}/>
-        
+        <Article images={images} setImage={setImage} updateLikesOnServer={updateLikesOnServer} createCommentOnServer={createCommentOnServer} />
+
 
       </section>
 

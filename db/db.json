@@ -3,7 +3,7 @@
     {
       "id": 1,
       "title": "Coder dog",
-      "likes": 12,
+      "likes": 13,
       "image": "./assets/coder-dog.png"
     },
     {
@@ -11,6 +11,60 @@
       "title": "Coder cats",
       "likes": 8,
       "image": "./assets/coder-cat.jpeg"
+    },
+    {
+      "title": "Caffe",
+      "image": "https://images.pexels.com/photos/10251858/pexels-photo-10251858.jpeg?cs=srgb&dl=pexels-esrageziyor-10251858.jpg&fm=jpg",
+      "likes": 6,
+      "id": 3
+    },
+    {
+      "title": "h",
+      "image": "https://images.pexels.com/photos/9330649/pexels-photo-9330649.jpeg?cs=srgb&dl=pexels-eriks-cistovs-9330649.jpg&fm=jpg",
+      "likes": 0,
+      "id": 4
+    },
+    {
+      "title": "njnh",
+      "image": "https://images.pexels.com/photos/10429564/pexels-photo-10429564.jpeg?cs=srgb&dl=pexels-beepin-10429564.jpg&fm=jpg",
+      "likes": 0,
+      "id": 5
+    },
+    {
+      "title": "njdnc",
+      "image": "https://images.pexels.com/photos/2463815/pexels-photo-2463815.jpeg?cs=srgb&dl=pexels-kristen-munk-2463815.jpg&fm=jpg",
+      "likes": 0,
+      "id": 6
+    },
+    {
+      "title": "cdcvv",
+      "image": "https://images.pexels.com/photos/2463815/pexels-photo-2463815.jpeg?cs=srgb&dl=pexels-kristen-munk-2463815.jpg&fm=jpg",
+      "likes": 0,
+      "id": 7
+    },
+    {
+      "title": "ecev",
+      "image": "https://images.pexels.com/photos/10251858/pexels-photo-10251858.jpeg?cs=srgb&dl=pexels-esrageziyor-10251858.jpg&fm=jpg",
+      "likes": 17,
+      "id": 8
+    },
+    {
+      "title": "cccd",
+      "image": "https://images.pexels.com/photos/10251858/pexels-photo-10251858.jpeg?cs=srgb&dl=pexels-esrageziyor-10251858.jpg&fm=jpg",
+      "likes": 0,
+      "id": 9
+    },
+    {
+      "title": "test",
+      "image": "https://images.pexels.com/photos/9330649/pexels-photo-9330649.jpeg?cs=srgb&dl=pexels-eriks-cistovs-9330649.jpg&fm=jpg",
+      "likes": 0,
+      "id": 10
+    },
+    {
+      "title": "new",
+      "image": "https://images.pexels.com/photos/10701375/pexels-photo-10701375.jpeg?cs=srgb&dl=pexels-annie-spratt-10701375.jpg&fm=jpg",
+      "likes": 0,
+      "id": 11
     }
   ],
   "comments": [
@@ -38,6 +92,91 @@
       "imageId": 1,
       "content": "Hes a good boy!!",
       "id": 5
+    },
+    {
+      "content": "",
+      "ImageId": 3,
+      "id": 6
+    },
+    {
+      "content": "",
+      "ImageId": 3,
+      "id": 7
+    },
+    {
+      "content": "I need a coffe",
+      "ImageId": 3,
+      "id": 8
+    },
+    {
+      "content": "",
+      "ImageId": 3,
+      "id": 9
+    },
+    {
+      "content": "",
+      "ImageId": 3,
+      "id": 10
+    },
+    {
+      "content": "",
+      "ImageId": 3,
+      "id": 11
+    },
+    {
+      "content": "I need a coffe",
+      "ImageId": 3,
+      "id": 12
+    },
+    {
+      "content": "I need a coffe",
+      "ImageId": 3,
+      "id": 13
+    },
+    {
+      "content": "I need a coffe",
+      "ImageId": 3,
+      "id": 14
+    },
+    {
+      "content": "fbb",
+      "ImageId": 2,
+      "id": 15
+    },
+    {
+      "content": "",
+      "ImageId": 4,
+      "id": 16
+    },
+    {
+      "content": "mkcm",
+      "ImageId": 4,
+      "id": 17
+    },
+    {
+      "content": "",
+      "ImageId": 5,
+      "id": 18
+    },
+    {
+      "content": "",
+      "ImageId": 1,
+      "id": 19
+    },
+    {
+      "content": "nkn",
+      "ImageId": 3,
+      "id": 20
+    },
+    {
+      "content": "i need caffe",
+      "ImageId": 3,
+      "id": 21
+    },
+    {
+      "content": "hello",
+      "ImageId": 2,
+      "id": 22
     }
   ]
 }

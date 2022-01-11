@@ -1,7 +1,21 @@
 import './Form.css'
 
-function Form() {
-    return < form className="comment-form image-card" >
+function Form(props) {
+    return < form className="comment-form image-card"
+        onSubmit={(e) => {
+            e.preventDefault();
+            // @ts-ignore
+            const title = e.target.title.value;
+            // @ts-ignore
+            const url = e.target.image.value;
+            // @ts-ignore
+            e.target.reset()
+
+            props.postImageOnServer(title, url)
+
+        }
+        }
+    >
         <h2 className="title">New Post</h2>
         <input
             className="comment-input"
