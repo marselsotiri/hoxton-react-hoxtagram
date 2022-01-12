@@ -3,7 +3,7 @@ import './Article.css'
 function Article(props) {
     return <>
         {
-            props.images.map((image) =>
+            props.searchedImages.map((image) =>
 
                 <article key={image.id} className="image-card">
                     <h2 className="title">{image.title}</h2>
@@ -17,8 +17,16 @@ function Article(props) {
                         >♥</button>
                     </div>
                     <ul className="comments">
-                        {image?.comments?.map((comment) => (
-                            <li key={comment.id}>{comment.content}</li>
+                        {image.comments.map((comment) => (
+                            <li key={comment.id}>{comment.content}
+                                <button
+                                    onClick={function () {
+                                        props.deleteComment(comment)
+                                    }}
+                                >
+                                    X
+                                </button>
+                            </li>
                         ))}
                     </ul>
                     <form className="comment-form"
@@ -30,8 +38,6 @@ function Article(props) {
                             e.target.reset()
 
                             props.createCommentOnServer(content, image.id)
-
-
                         }
 
                         }
